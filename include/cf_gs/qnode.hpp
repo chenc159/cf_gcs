@@ -25,21 +25,26 @@
 #include <QThread>
 #include <QStringListModel>
 
+#include <cf_gs/Mocap.h>
 
 /*****************************************************************************
 ** Namespaces
 *****************************************************************************/
 
-namespace cf_gs {
+using Mocap = cf_gs::Mocap;
+
+namespace cf_gs
+{
 
 /*****************************************************************************
 ** Class
 *****************************************************************************/
 
-class QNode : public QThread {
-    Q_OBJECT
+class QNode : public QThread
+{
+	Q_OBJECT
 public:
-	QNode(int argc, char** argv );
+	QNode(int argc, char **argv);
 	virtual ~QNode();
 	bool init();
 	bool init(const std::string &master_url, const std::string &host_url);
@@ -48,28 +53,36 @@ public:
 	/*********************
 	** Logging
 	**********************/
-	enum LogLevel {
-	         Debug,
-	         Info,
-	         Warn,
-	         Error,
-	         Fatal
-	 };
+	enum LogLevel
+	{
+		Debug,
+		Info,
+		Warn,
+		Error,
+		Fatal
+	};
 
-	QStringListModel* loggingModel() { return &logging_model; }
-	void log( const LogLevel &level, const std::string &msg);
+	std::map<std::string, ros::Subscriber> sub_;
+
+	QStringListModel *loggingModel() { return &logging_model; }
+	void log(const LogLevel &level, const std::string &msg);
 
 Q_SIGNALS:
 	void loggingUpdated();
-    void rosShutdown();
+	void rosShutdown();
 
 private:
 	int init_argc;
-	char** init_argv;
+	char **init_argv;
 	ros::Publisher chatter_publisher;
-    QStringListModel logging_model;
+	QStringListModel logging_model;
+
+	std::vector<std::string> mocap_topics;
+	Mocap mocap;
+
+	void mocap_callback(const Mocap::ConstPtr &msg);
 };
 
-}  // namespace cf_gs
+} // namespace cf_gs
 
 #endif /* cf_gs_QNODE_HPP_ */

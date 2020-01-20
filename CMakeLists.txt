@@ -5,17 +5,53 @@
 cmake_minimum_required(VERSION 2.8.0)
 project(cf_gs)
 
+## Compile as C++11, supported in ROS Kinetic and newer
+add_compile_options(-std=c++11)
+
 ##############################################################################
 # Catkin
 ##############################################################################
 
 # qt_build provides the qt cmake glue, roscpp the comms for a default talker
-find_package(catkin REQUIRED COMPONENTS qt_build roscpp)
+find_package(catkin REQUIRED COMPONENTS
+message_generation 
+qt_build 
+roscpp
+geometry_msgs
+sensor_msgs
+mavros
+nav_msgs
+std_msgs
+std_srvs
+tf2_ros
+tf2_eigen
+mavros_msgs
+)
+
 include_directories(${catkin_INCLUDE_DIRS})
 # Use this to define what the package will export (e.g. libs, headers).
 # Since the default here is to produce only a binary, we don't worry about
 # exporting anything. 
-catkin_package()
+
+## Generate messages in the 'msg' folder
+add_message_files(
+  DIRECTORY msg
+  FILES
+  Mocap.msg
+)
+
+generate_messages(
+  DEPENDENCIES
+  geometry_msgs
+  sensor_msgs
+  std_msgs
+)
+
+catkin_package(
+    INCLUDE_DIRS include
+    CATKIN_DEPENDS  message_runtime
+)
+
 
 ##############################################################################
 # Qt Environment
@@ -48,6 +84,7 @@ file(GLOB_RECURSE QT_SOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} FOLLOW_SYMLINK
 ##############################################################################
 
 add_executable(cf_gs ${QT_SOURCES} ${QT_RESOURCES_CPP} ${QT_FORMS_HPP} ${QT_MOC_HPP})
+add_dependencies(cf_gs cf_gs_generate_messages_cpp)
 target_link_libraries(cf_gs ${QT_LIBRARIES} ${catkin_LIBRARIES})
 install(TARGETS cf_gs RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
