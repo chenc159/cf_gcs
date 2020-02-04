@@ -88,6 +88,46 @@ void MainWindow::on_cf0_Button_Land_clicked(bool check)
     qnode.land();
 }
 
+void MainWindow::on_cf0_Button_Set_clicked(bool check){
+    /* read values from line edit */
+    float target_state[3];
+
+    target_state[0] =  ui.cf0_x_input->text().toFloat();
+    target_state[1] =  ui.cf0_y_input->text().toFloat();
+    target_state[2] =  ui.cf0_z_input->text().toFloat();
+    /*----------------determine whether the input is in safe range ------------------*/
+    bool input_is_valid = true;
+
+    if(target_state[0] < -1.5 || target_state[0] > 1.3) {
+        input_is_valid = false;
+    }
+
+    if(target_state[1] < -1 || target_state[1] > 1) {
+        input_is_valid = false;
+    }
+
+    if(target_state[2] < 0|| target_state[2] > 1.8) {
+        input_is_valid = false;
+    }
+
+    /*----------------send input ------------------*/
+
+    if(input_is_valid){
+        /*  update the ENU target label */
+        ui.cf0_des_x->setText(QString::number(target_state[0], 'f', 2));
+        ui.cf0_des_y->setText(QString::number(target_state[1], 'f', 2));
+        ui.cf0_des_z->setText(QString::number(target_state[2], 'f', 2));
+
+        qnode.move_cf(target_state);
+
+    } else {
+        QMessageBox msgBox;
+        msgBox.setText("Input position is out of range!!");
+        msgBox.exec();
+    };
+}
+
+
 ////////////////////////// Update signals
 
 void MainWindow::updatecf0mocap()

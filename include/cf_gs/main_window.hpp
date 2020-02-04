@@ -48,6 +48,7 @@ public Q_SLOTS:
 
 	void on_cf0_Button_Takeoff_clicked(bool check);
 	void on_cf0_Button_Land_clicked(bool check);
+	void on_cf0_Button_Set_clicked(bool check);
 
 
     /******************************************

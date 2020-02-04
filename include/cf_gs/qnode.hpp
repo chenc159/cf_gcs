@@ -71,6 +71,7 @@ public:
 	void pub_command();
 	void takeoff();
 	void land();
+	void move_cf(float target[3]);
 	Mocap GetMocap();
 	PoseStamped GetDesPos();
 

@@ -199,11 +199,6 @@ void QNode::takeoff()
 	cf0_goal.pose.position.y = mocap.position[1]; //m_dronePositionWorld[1];
 	cf0_goal.pose.position.z = 0.5;
 	commandFlag[0] = true;
-
-	// cf0_Takeoff;
-	// commandFlag = true;
-	// Command_List.header.stamp = ros::Time::now();
-	// Command_List.Mode = Takeoff;
 }
 void QNode::land()
 {
@@ -211,11 +206,14 @@ void QNode::land()
 	cf0_goal.pose.position.y = mocap.position[1]; //m_dronePositionWorld[1];
 	cf0_goal.pose.position.z = 0;
 	commandFlag[0] = true;
+}
 
-	// cf0_Land;
-	// commandFlag = true;
-	// Command_List.header.stamp = ros::Time::now();
-	// Command_List.Mode = Land;
+void QNode::move_cf(float target[3])
+{
+	cf0_goal.pose.position.x = target[0];
+	cf0_goal.pose.position.y = target[1];
+	cf0_goal.pose.position.z = target[2];
+	commandFlag[0] = true;
 }
 
 cf_gs::signalRec QNode::Update_cf0_signal()
