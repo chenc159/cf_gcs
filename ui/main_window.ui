@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>944</width>
-    <height>704</height>
+    <width>1161</width>
+    <height>683</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,6 +22,1101 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout">
+    <item>
+     <widget class="QWidget" name="widget" native="true">
+      <layout class="QFormLayout" name="formLayout_2">
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="cfs_mocap">
+         <property name="title">
+          <string>Mocap Connection</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="6">
+           <widget class="QLabel" name="cf5_mocap">
+            <property name="text">
+             <string>cf5</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="cf1_mocap">
+            <property name="text">
+             <string>cf1</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="5">
+           <widget class="QLabel" name="cf4_mocap">
+            <property name="text">
+             <string>cf4</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QLabel" name="cf2_mocap">
+            <property name="text">
+             <string>cf2</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="4">
+           <widget class="QLabel" name="cf3_mocap">
+            <property name="text">
+             <string>cf3</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="cf0_mocap">
+            <property name="text">
+             <string>cf0</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QGroupBox" name="cfs_rosconnect">
+         <property name="title">
+          <string>ROS Connection</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="1" column="5">
+           <widget class="QLabel" name="cf5_rosc">
+            <property name="text">
+             <string>cf5</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="cf2_rosc">
+            <property name="text">
+             <string>cf2</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="QLabel" name="cf3_rosc">
+            <property name="text">
+             <string>cf3</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="4">
+           <widget class="QLabel" name="cf4_rosc">
+            <property name="text">
+             <string>cf4</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLabel" name="cf1_rosc">
+            <property name="text">
+             <string>cf1</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="cf0_rosc">
+            <property name="text">
+             <string>cf0</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="3" column="0" colspan="2">
+        <widget class="QPushButton" name="allcf_takoff">
+         <property name="text">
+          <string>All Takeoff</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0" colspan="2">
+        <widget class="QPushButton" name="allcf_land">
+         <property name="text">
+          <string>All Land</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QGroupBox" name="groupBox_8">
+         <property name="title">
+          <string>Ready to Fly</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0">
+           <widget class="QLabel" name="cf0_con">
+            <property name="text">
+             <string>cf0</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="cf1_con">
+            <property name="text">
+             <string>cf1</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="cf2_con">
+            <property name="text">
+             <string>cf2</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QLabel" name="cf3_con">
+            <property name="text">
+             <string>cf3</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="4">
+           <widget class="QLabel" name="cf4_con">
+            <property name="text">
+             <string>cf4</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="5">
+           <widget class="QLabel" name="cf5_con">
+            <property name="text">
+             <string>cf5</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="cfs" native="true">
+      <layout class="QFormLayout" name="formLayout">
+       <item row="0" column="0" colspan="2">
+        <widget class="QScrollArea" name="scrollArea_2">
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents_2">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>253</width>
+            <height>73</height>
+           </rect>
+          </property>
+         </widget>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_15">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <widget class="QGroupBox" name="groupBox_9">
+         <property name="title">
+          <string>Mocap X Y Z (m)</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_15">
+          <item>
+           <widget class="QLabel" name="cf0_x">
+            <property name="text">
+             <string>---</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="cf0_y">
+            <property name="text">
+             <string>---</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="cf0_z">
+            <property name="text">
+             <string>---</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="3" column="0" colspan="2">
+        <widget class="QGroupBox" name="groupBox_11">
+         <property name="title">
+          <string>Command X Y Z (m)</string>
+         </property>
+         <layout class="QFormLayout" name="formLayout_3">
+          <item row="0" column="0">
+           <widget class="QLabel" name="cf0_des_x">
+            <property name="text">
+             <string>---</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="cf0_des_y">
+            <property name="text">
+             <string>---</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="cf0_des_z">
+            <property name="text">
+             <string>---</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="4" column="0" colspan="2">
+        <widget class="QGroupBox" name="groupBox_14">
+         <property name="title">
+          <string>Target X Y Z (m)</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_5">
+          <item row="3" column="0">
+           <widget class="QLineEdit" name="cf0_z_input"/>
+          </item>
+          <item row="4" column="0">
+           <widget class="QPushButton" name="cf0_Button_Set">
+            <property name="text">
+             <string>Set</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QPushButton" name="cf0_Button_Takeoff">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Takeoff</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLineEdit" name="cf0_x_input"/>
+          </item>
+          <item row="6" column="0">
+           <widget class="QPushButton" name="cf0_Button_Land">
+            <property name="text">
+             <string>Land</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLineEdit" name="cf0_y_input"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>UAV0  Real-time Info</string>
+       </attribute>
+       <widget class="QGroupBox" name="groupBox_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>321</width>
+          <height>121</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Drone Status</string>
+        </property>
+        <widget class="QLabel" name="UAV0_connection">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>111</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="lineWidth">
+          <number>5</number>
+         </property>
+         <property name="text">
+          <string>UNCONNECTED</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="UAV0_arm">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>40</y>
+           <width>101</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <strikeout>false</strikeout>
+          </font>
+         </property>
+         <property name="text">
+          <string>DISARMED</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="UAV0_mode">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>60</y>
+           <width>101</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>MANUAL</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="UAV0_commandmode">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>80</y>
+           <width>111</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>IDEL</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="UAV0_mocapFlag">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>100</y>
+           <width>181</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>No OptiTrack Feedback!!</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="UAV0_detection">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>10</y>
+           <width>141</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>UAV0 Undetected</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="UAV0_Button_Disarm">
+         <property name="geometry">
+          <rect>
+           <x>120</x>
+           <y>30</y>
+           <width>191</width>
+           <height>61</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Disarm</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_3">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>130</y>
+          <width>91</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>X Y Z (m)</string>
+        </property>
+        <widget class="QLabel" name="UAV0_x">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>51</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>---</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="UAV0_y">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>40</y>
+           <width>51</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>---</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="UAV0_z">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>60</y>
+           <width>51</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>---</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_4">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>130</y>
+          <width>111</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Vx Vy Vz (m/s)</string>
+        </property>
+        <widget class="QLabel" name="UAV0_vx">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>67</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>---</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="UAV0_vy">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>40</y>
+           <width>67</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>---</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="UAV0_vz">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>60</y>
+           <width>67</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>---</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_6">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>220</y>
+          <width>211</width>
+          <height>101</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Attitude &amp; Thrust Reference</string>
+        </property>
+        <widget class="QLabel" name="UAV0_thrust">
+         <property name="geometry">
+          <rect>
+           <x>120</x>
+           <y>80</y>
+           <width>71</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>---</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="UAV0_att_pitch">
+         <property name="geometry">
+          <rect>
+           <x>120</x>
+           <y>20</y>
+           <width>71</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>---</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="UAV0_att_roll">
+         <property name="geometry">
+          <rect>
+           <x>120</x>
+           <y>40</y>
+           <width>71</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>---</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="UAV0_att_yaw">
+         <property name="geometry">
+          <rect>
+           <x>120</x>
+           <y>60</y>
+           <width>71</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>---</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_4">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>81</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Pitch(DEG)</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_5">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>40</y>
+           <width>71</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Roll (DEG)</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_6">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>60</y>
+           <width>81</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Yaw (DEG)</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_7">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>80</y>
+           <width>67</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Thrust </string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="Line" name="line">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>400</y>
+          <width>211</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_7">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>420</y>
+          <width>331</width>
+          <height>161</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Target XYZ (m)</string>
+        </property>
+        <widget class="QPushButton" name="UAV0_Button_Takeoff">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>30</y>
+           <width>121</width>
+           <height>27</height>
+          </rect>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="toolTip">
+          <string>Set the target to the current joint trajectory state.</string>
+         </property>
+         <property name="statusTip">
+          <string>Clear all waypoints and set the target to the current joint trajectory state.</string>
+         </property>
+         <property name="text">
+          <string>take off</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="UAV0_Button_moveENU">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>110</y>
+           <width>131</width>
+           <height>27</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Move ENU</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="UAV0_Button_Land">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>30</y>
+           <width>121</width>
+           <height>27</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Land</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="Flush_MoveENU_Button">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>100</y>
+           <width>151</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Flush Move ENU</string>
+         </property>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>110</x>
+           <y>70</y>
+           <width>211</width>
+           <height>29</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_17">
+          <item>
+           <widget class="QLineEdit" name="UAV0_Target_x">
+            <property name="text">
+             <string>0</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="UAV0_Target_y">
+            <property name="text">
+             <string>0</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="UAV0_Target_z">
+            <property name="text">
+             <string>0.25</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QPushButton" name="UAV0_Copypos">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>70</y>
+           <width>99</width>
+           <height>27</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Copy Pos</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_5">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>320</y>
+          <width>131</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Command Thrust </string>
+        </property>
+        <widget class="QLabel" name="UAV0_Tx">
+         <property name="geometry">
+          <rect>
+           <x>60</x>
+           <y>20</y>
+           <width>67</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>---</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="UAV0_Ty">
+         <property name="geometry">
+          <rect>
+           <x>60</x>
+           <y>40</y>
+           <width>67</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>---</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="UAV0_Tz">
+         <property name="geometry">
+          <rect>
+           <x>60</x>
+           <y>60</y>
+           <width>67</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>---</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_11">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>41</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Tx</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_12">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>40</y>
+           <width>31</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Ty</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_13">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>60</y>
+           <width>31</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Tz</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>320</y>
+          <width>151</width>
+          <height>80</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Command X Y Z (m)</string>
+        </property>
+        <widget class="QLabel" name="UAV0_Target_x_label">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>20</y>
+           <width>67</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>---</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="UAV0_Target_y_label">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>40</y>
+           <width>67</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>---</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="UAV0_Target_z_label">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>60</y>
+           <width>67</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>---</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Parameter</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_10">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_14">
+          <item>
+           <widget class="QLabel" name="UAV0_controllername">
+            <property name="text">
+             <string>Controller: ----</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="UAV0_Quadmass">
+            <property name="text">
+             <string>Quad Mass (kg): ----</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="UAV0_Payloadmass">
+            <property name="text">
+             <string>Payload Mass (kg): ----</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="UAV0_motor_para">
+            <property name="text">
+             <string>motor slop : ----, intercept: ----</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="UAV0_Cablelength">
+            <property name="text">
+             <string>Cable Length (m): ----</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="UAV0_a_j">
+            <property name="text">
+             <string>a_0: ----</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="UAV0_t_jx">
+            <property name="text">
+             <string>t_0x(m) : ----</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="UAV0_t_jy">
+            <property name="text">
+             <string>t_0y(m) : ----</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="UAV0_t_jz">
+            <property name="text">
+             <string>t_0z(m) : ----</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="UAV0_Numofdrones">
+            <property name="text">
+             <string>Num of Drones : ----</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="UAV0_kv">
+            <property name="text">
+             <string>kv: ---- , ----, ----</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="UAV0_kvi">
+            <property name="text">
+             <string>kvi : ----, ----, ----</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="UAV0_kR">
+            <property name="text">
+             <string>kR : ----, ----, ----</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="UAV0_kL">
+            <property name="text">
+             <string>kL: ----</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="UAV0_kphi">
+            <property name="text">
+             <string>kphi: ----, ----, ----</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="UAV0_p_error_max">
+            <property name="text">
+             <string>p_error_max : ----, ----, ----</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="UAV0_p_int_max">
+            <property name="text">
+             <string>p_int_max : ----, ----, ----</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="UAV0_tilt_max">
+            <property name="text">
+             <string>tilt_max : -----</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="UAV0_int_start_error">
+            <property name="text">
+             <string>int_start_error : ----</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="UAV0_fp_max">
+            <property name="text">
+             <string>fp_max : ----, ----, ----</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
     <item>
      <widget class="QTabWidget" name="tab_manager">
       <property name="minimumSize">
@@ -38,7 +1133,7 @@
       </property>
       <widget class="QWidget" name="tab_status">
        <attribute name="title">
-        <string>Ros Communications</string>
+        <string>Ground Station Command Log</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
@@ -50,13 +1145,26 @@
            </sizepolicy>
           </property>
           <property name="title">
-           <string>Logging</string>
+           <string>Message Log</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_3">
-           <item row="0" column="0">
+           <item row="0" column="2">
             <widget class="QListView" name="view_logging"/>
            </item>
           </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="quit_button">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Quit</string>
+          </property>
          </widget>
         </item>
        </layout>
@@ -70,8 +1178,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>944</width>
-     <height>21</height>
+     <width>1161</width>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
@@ -88,204 +1196,6 @@
    <addaction name="menu_File"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <widget class="QDockWidget" name="dock_status">
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>325</width>
-     <height>368</height>
-    </size>
-   </property>
-   <property name="allowedAreas">
-    <set>Qt::RightDockWidgetArea</set>
-   </property>
-   <property name="windowTitle">
-    <string>Command Panel</string>
-   </property>
-   <attribute name="dockWidgetArea">
-    <number>2</number>
-   </attribute>
-   <widget class="QWidget" name="dockWidgetContents_2">
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QFrame" name="frame">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_3">
-        <item>
-         <widget class="QGroupBox" name="groupBox">
-          <property name="title">
-           <string>Ros Master</string>
-          </property>
-          <layout class="QGridLayout" name="gridLayout">
-           <item row="0" column="0">
-            <widget class="QLabel" name="label">
-             <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
-             </property>
-             <property name="text">
-              <string>Ros Master Url</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0" colspan="2">
-            <widget class="QLineEdit" name="line_edit_master">
-             <property name="text">
-              <string>http://192.168.1.2:11311/</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="0">
-            <widget class="QLabel" name="label_2">
-             <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
-             </property>
-             <property name="text">
-              <string>Ros IP</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="0" colspan="2">
-            <widget class="QLineEdit" name="line_edit_host">
-             <property name="text">
-              <string>192.168.1.67</string>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="0">
-            <widget class="QLabel" name="label_3">
-             <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
-             </property>
-             <property name="text">
-              <string>Ros Hostname</string>
-             </property>
-            </widget>
-           </item>
-           <item row="5" column="0" colspan="2">
-            <widget class="QLineEdit" name="line_edit_topic">
-             <property name="enabled">
-              <bool>false</bool>
-             </property>
-             <property name="text">
-              <string>unused</string>
-             </property>
-            </widget>
-           </item>
-           <item row="6" column="0" colspan="2">
-            <widget class="QCheckBox" name="checkbox_use_environment">
-             <property name="layoutDirection">
-              <enum>Qt::RightToLeft</enum>
-             </property>
-             <property name="text">
-              <string>Use environment variables</string>
-             </property>
-            </widget>
-           </item>
-           <item row="7" column="0" colspan="2">
-            <widget class="QCheckBox" name="checkbox_remember_settings">
-             <property name="layoutDirection">
-              <enum>Qt::RightToLeft</enum>
-             </property>
-             <property name="text">
-              <string>Remember settings on startup</string>
-             </property>
-            </widget>
-           </item>
-           <item row="8" column="0">
-            <spacer name="horizontalSpacer">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>170</width>
-               <height>21</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item row="8" column="1">
-            <widget class="QPushButton" name="button_connect">
-             <property name="enabled">
-              <bool>true</bool>
-             </property>
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="toolTip">
-              <string>Set the target to the current joint trajectory state.</string>
-             </property>
-             <property name="statusTip">
-              <string>Clear all waypoints and set the target to the current joint trajectory state.</string>
-             </property>
-             <property name="text">
-              <string>Connect</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item>
-         <spacer name="verticalSpacer_3">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>233</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="quit_button">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>Quit</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-  </widget>
   <action name="action_Quit">
    <property name="text">
     <string>&amp;Quit</string>

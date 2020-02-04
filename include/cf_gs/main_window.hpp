@@ -45,14 +45,22 @@ public Q_SLOTS:
 	/******************************************
 	** Auto-connections (connectSlotsByName())
 	*******************************************/
-	void on_actionAbout_triggered();
-	void on_button_connect_clicked(bool check );
-	void on_checkbox_use_environment_stateChanged(int state);
+
+	void on_cf0_Button_Takeoff_clicked(bool check);
+	void on_cf0_Button_Land_clicked(bool check);
+
 
     /******************************************
     ** Manual connections
     *******************************************/
-    void updateLoggingView(); // no idea why this can't connect automatically
+//    void updateLoggingView(); // no idea why this can't connect automatically
+	void updatecf0mocap();
+	void updatecf0despos();
+	void updatecf0signal();
+
+Q_SIGNALS:
+    void send_Takeoffcf0();
+
 
 private:
 	Ui::MainWindowDesign ui;
