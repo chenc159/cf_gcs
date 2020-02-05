@@ -94,15 +94,11 @@ bool QNode::init(void)
 	// cf0_pubCmdVtemp = n.advertise<geometry_msgs::Twist>("cf0/cmdVtemp", 1);
 	mocap_cf0 = n.subscribe<Mocap>("mocap/cf0", 1, &QNode::mocap_callback, this);
 	goal_subs_cf0 = n.subscribe<PoseStamped>("cf0/goal", 1, &QNode::goalChanged, this);
+	imu_sub_cf0 = n.subscribe<sensor_msgs::Imu>("cf0/imu", 1, &QNode::imu_callback, this);
 
 	pose_pub_cf0 = n.advertise<PoseStamped>("cf0/goal", 100);
-	// cf0_serviceTakeoff = n.advertiseService("cf0/cftakeoff", &QNode::takeoff, this);
-	// m_serviceAuto = n.advertiseService(drone_ID + "/cfauto", &Controller::automatic, this);
-	// m_serviceGame = n.advertiseService(drone_ID + "/cfplay", &Controller::play, this);
-	// cf0_serviceLand = n.advertiseService("cf0/cfland", &QNode::land, this);
+	cmdv_pub_cf0 = n.advertise<Twist>("cf0/cmdV", 100);
 
-	// Add your ros communications here.
-	// chatter_publisher = n.advertise<std_msgs::String>("chatter", 1000);
 	start();
 	return true;
 }
@@ -114,11 +110,34 @@ void QNode::run()
 	{
 		pub_command();
 		ros::spinOnce();
-		if (cf0_Recieved.mocapReceived && cf0_Recieved.rosReceived)
+
+		// Update mocap/ros singal received or not
+		if (cf0_Recieved.premocap && cf0_Recieved.preros)
 		{
 			cf0_Recieved.Isconnected = true;
+			cf0_Recieved.mocapReceived = true;
+			cf0_Recieved.rosReceived = true;
 		}
-		cf0_Recieved.Isconnected = false;
+		else if (!cf0_Recieved.premocap && !cf0_Recieved.preros)
+		{
+			cf0_Recieved.Isconnected = false;
+			cf0_Recieved.mocapReceived = false;
+			cf0_Recieved.rosReceived = false;
+		}
+		else if (!cf0_Recieved.premocap)
+		{
+			cf0_Recieved.Isconnected = false;
+			cf0_Recieved.mocapReceived = true;
+			cf0_Recieved.rosReceived = false;
+		}
+		else if (!cf0_Recieved.preros)
+		{
+			cf0_Recieved.Isconnected = false;
+			cf0_Recieved.mocapReceived = true;
+			cf0_Recieved.rosReceived = false;
+		}
+		cf0_Recieved.premocap = false;
+		cf0_Recieved.preros = false;
 
 		// for (int i = 0; i < DroneNumber; i++)
 		// {
@@ -158,7 +177,6 @@ void QNode::goalChanged(const geometry_msgs::PoseStamped::ConstPtr &msg)
 	// m_goal[0] = msg.pose.position.x;
 	// m_goal[1] = msg.pose.position.y;
 	// m_goal[2] = msg.pose.position.z;
-	cf0_Recieved.rosReceived = true;
 }
 
 void QNode::mocap_callback(const cf_gs::Mocap::ConstPtr &msg)
@@ -170,8 +188,15 @@ void QNode::mocap_callback(const cf_gs::Mocap::ConstPtr &msg)
 	// m_droneVelocityWorld[0] = *msg.velocity[0];
 	// m_droneVelocityWorld[1] = *msg.velocity[1];
 	// m_droneVelocityWorld[2] = *msg.velocity[2];
-	cf0_Recieved.mocapReceived = true;
+	cf0_Recieved.premocap = true;
 	//
+}
+
+void QNode::imu_callback(const sensor_msgs::Imu::ConstPtr &msg)
+{
+	// If can get msg from imu, ros connected
+	cf0_imu = *msg;
+	cf0_Recieved.preros = true;
 }
 
 void QNode::pub_command()
@@ -179,6 +204,7 @@ void QNode::pub_command()
 	if (commandFlag[0])
 	{
 		pose_pub_cf0.publish(cf0_goal);
+		cmdv_pub_cf0.publish(cf0_cmdv);
 		commandFlag[0] = false;
 	}
 	// if (commandFlag[1])
@@ -195,15 +221,16 @@ void QNode::pub_command()
 
 void QNode::takeoff()
 {
-	cf0_goal.pose.position.x = mocap.position[0]; //m_dronePositionWorld[0];
-	cf0_goal.pose.position.y = mocap.position[1]; //m_dronePositionWorld[1];
+	cf0_goal.pose.position.x = mocap.position[0];
+	cf0_goal.pose.position.y = mocap.position[1];
 	cf0_goal.pose.position.z = 0.5;
+	cf0_cmdv.linear.z = 43000;
 	commandFlag[0] = true;
 }
 void QNode::land()
 {
-	cf0_goal.pose.position.x = mocap.position[0]; //m_dronePositionWorld[0];
-	cf0_goal.pose.position.y = mocap.position[1]; //m_dronePositionWorld[1];
+	cf0_goal.pose.position.x = mocap.position[0];
+	cf0_goal.pose.position.y = mocap.position[1];
 	cf0_goal.pose.position.z = 0;
 	commandFlag[0] = true;
 }
