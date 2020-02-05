@@ -9,8 +9,14 @@
 ** Includes
 *****************************************************************************/
 
-#include <QtGui>
-#include <QApplication>
+#include <QtGlobal>
+#if QT_VERSION >= 0x050000
+    #include <QtWidgets>
+    #include <QApplication>
+#else
+    #include <QtGui>
+    #include <QApplication>
+#endif
 #include "../include/cf_gs/main_window.hpp"
 
 /*****************************************************************************

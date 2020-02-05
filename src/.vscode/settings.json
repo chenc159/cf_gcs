@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "functional": "cpp"
+        "functional": "cpp",
+        "qapplication": "cpp",
+        "qmessagebox": "cpp"
     }
 }

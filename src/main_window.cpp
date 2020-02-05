@@ -9,7 +9,7 @@
 ** Includes
 *****************************************************************************/
 
-#include <QtGui>
+// #include <QtGui>
 #include <QMessageBox>
 #include <iostream>
 #include "../include/cf_gs/main_window.hpp"
