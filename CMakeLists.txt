@@ -95,10 +95,3 @@ file(GLOB_RECURSE QT_SOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} FOLLOW_SYMLINK
 add_executable(cf_gs ${QT_SOURCES} ${QT_RESOURCES_CPP} ${QT_FORMS_HPP} ${QT_MOC_HPP})
 add_dependencies(cf_gs cf_gs_generate_messages_cpp)
 target_link_libraries(cf_gs ${QT_LIBRARIES} ${catkin_LIBRARIES} Qt5::Widgets)
-#install(TARGETS cf_gs RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
-
-########### delete above 4 lines and use the below 3 lines
-#add_executable(ros_logger_gui ${QT_SOURCES} ${QT_RESOURCES_CPP} ${QT_FORMS_HPP} ${QT_MOC_HPP})
-#target_link_libraries(ros_logger_gui ${catkin_LIBRARIES} Qt5::Widgets)
-
-#install(TARGETS ros_logger_gui RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
