@@ -31,6 +31,7 @@
 #include <geometry_msgs/Twist.h>
 #include <geometry_msgs/PoseStamped.h>
 #include "sensor_msgs/Imu.h"
+#include <std_srvs/Empty.h>
 
 /*****************************************************************************
 ** Namespaces
@@ -101,8 +102,10 @@ using Twist = geometry_msgs::Twist;
 		ros::Publisher pose_pub_cf0;
 		ros::Publisher cmdv_pub_cf0;
 
-		ros::ServiceClient cf0_Takeoff;
-		ros::ServiceClient cf0_Land;
+		ros::ServiceClient takeoff_cf0;
+		ros::ServiceClient land_cf0;
+
+		std_srvs::Empty serv_empty;
 
 		std::vector<std::string> mocap_topics;
 

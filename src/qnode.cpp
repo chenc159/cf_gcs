@@ -99,6 +99,10 @@ bool QNode::init(void)
 	pose_pub_cf0 = n.advertise<PoseStamped>("cf0/goal", 100);
 	cmdv_pub_cf0 = n.advertise<Twist>("cf0/cmdV", 100);
 
+	takeoff_cf0 = n.serviceClient<std_srvs::Empty>("cf0/cftakeoff");
+	land_cf0 = n.serviceClient<std_srvs::Empty>("cf0/cfland");
+
+
 	start();
 	return true;
 }
@@ -224,15 +228,17 @@ void QNode::takeoff()
 	cf0_goal.pose.position.x = mocap.position[0];
 	cf0_goal.pose.position.y = mocap.position[1];
 	cf0_goal.pose.position.z = 0.5;
-	cf0_cmdv.linear.z = 43000;
+	// cf0_cmdv.linear.z = 43000;
+	takeoff_cf0.call(serv_empty);
 	commandFlag[0] = true;
 }
 void QNode::land()
 {
-	cf0_goal.pose.position.x = mocap.position[0];
-	cf0_goal.pose.position.y = mocap.position[1];
-	cf0_goal.pose.position.z = 0;
-	commandFlag[0] = true;
+	// cf0_goal.pose.position.x = mocap.position[0];
+	// cf0_goal.pose.position.y = mocap.position[1];
+	// cf0_goal.pose.position.z = 0;
+	land_cf0.call(serv_empty);
+	// commandFlag[0] = true;
 }
 
 void QNode::move_cf(float target[3])
