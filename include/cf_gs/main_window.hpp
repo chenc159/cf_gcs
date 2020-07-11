@@ -47,24 +47,58 @@ public Q_SLOTS:
 	** Auto-connections (connectSlotsByName())
 	*******************************************/
 
+	void on_allcf_takoff_clicked(bool check);
+	void on_allcf_land_clicked(bool check);
+
 	void on_cf0_Button_Takeoff_clicked(bool check);
 	void on_cf0_Button_Land_clicked(bool check);
 	void on_cf0_Button_Set_clicked(bool check);
+	void on_cf0_Button_Get_clicked(bool check);
+
+	void on_cf1_Button_Takeoff_clicked(bool check);
+	void on_cf1_Button_Land_clicked(bool check);
+	void on_cf1_Button_Set_clicked(bool check);
+	void on_cf1_Button_Get_clicked(bool check);
+
+	void on_cf2_Button_Takeoff_clicked(bool check);
+	void on_cf2_Button_Land_clicked(bool check);
+	void on_cf2_Button_Set_clicked(bool check);
+	void on_cf2_Button_Get_clicked(bool check);
+
+	void on_cf3_Button_Takeoff_clicked(bool check);
+	void on_cf3_Button_Land_clicked(bool check);
+	void on_cf3_Button_Set_clicked(bool check);
+	void on_cf3_Button_Get_clicked(bool check);
+
+	void on_cf4_Button_Takeoff_clicked(bool check);
+	void on_cf4_Button_Land_clicked(bool check);
+	void on_cf4_Button_Set_clicked(bool check);
+	void on_cf4_Button_Get_clicked(bool check);
+
+	void on_cf5_Button_Takeoff_clicked(bool check);
+	void on_cf5_Button_Land_clicked(bool check);
+	void on_cf5_Button_Set_clicked(bool check);
+	void on_cf5_Button_Get_clicked(bool check);
 
 
     /******************************************
     ** Manual connections
     *******************************************/
 //    void updateLoggingView(); // no idea why this can't connect automatically
-	void updatecf0mocap();
-	void updatecf0despos();
-	void updatecf0signal();
+	void updatecf0();
+	void updatecf1();
+	void updatecf2();
+	void updatecf3();
+	void updatecf4();
+	void updatecf5();
 
 Q_SIGNALS:
-    void send_Takeoffcf0();
+    // void send_Takeoffcf0();
 
 
 private:
+	int DroneNumber = 6;
+
 	Ui::MainWindowDesign ui;
 	QNode qnode;
 };
