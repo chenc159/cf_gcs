@@ -38,13 +38,6 @@ QNode::QNode(int argc, char **argv) : init_argc(argc),
 	commandFlag[3] = false;
 	commandFlag[4] = false;
 	commandFlag[5] = false;
-	// mocapReceived[0] = false;
-	// rosReceived[0] = false;
-	// Isconnected[0] = false;
-	// ispayloaddetected = false;
-	// ispayloadmocaprecieved = false;
-	// ispayloadcontrolactivated = false;
-	// comid = 1;
 }
 
 QNode::~QNode()
@@ -57,19 +50,6 @@ QNode::~QNode()
 	wait();
 }
 
-// bool QNode::init()
-// {
-// 	// ros::init(init_argc, init_argv, "cf_gs");
-// 	// if (!ros::master::check()){
-// 	// 	return false;
-// 	// }
-// 	ros::start(); // explicitly needed since our nodehandle is going out of scope.
-// 	ros::NodeHandle n;
-// 	// Add your ros communications here.
-
-// 	start();
-// 	return true;
-// }
 
 bool QNode::init(void)
 {
@@ -78,11 +58,6 @@ bool QNode::init(void)
 	{
 		return false;
 	}
-
-	// std::map<std::string, std::string> remappings;
-	// remappings["__master"] = master_url;
-	// remappings["__hostname"] = host_url;
-	// ros::init(remappings, "cf_gs");
 
 	ros::start(); // explicitly needed since our nodehandle is going out of scope.
 	ros::NodeHandle n;
@@ -136,8 +111,6 @@ bool QNode::init(void)
 	land_cf5 		= n.serviceClient<std_srvs::Empty>("cf5/cfland");
 
 
-
-
 	start();
 	return true;
 }
@@ -168,37 +141,6 @@ void QNode::run()
 			cf_Recieved[i].premocap = false;
 			cf_Recieved[i].preros = false;
 		}
-
-		
-		/*
-		// Update mocap/ros singal received or not
-		if (cf0_Recieved.premocap && cf0_Recieved.preros)
-		{
-			cf0_Recieved.Isconnected = true;
-			cf0_Recieved.mocapReceived = true;
-			cf0_Recieved.rosReceived = true;
-		}
-		else if (!cf0_Recieved.premocap && !cf0_Recieved.preros)
-		{
-			cf0_Recieved.Isconnected = false;
-			cf0_Recieved.mocapReceived = false;
-			cf0_Recieved.rosReceived = false;
-		}
-		else if (!cf0_Recieved.premocap)
-		{
-			cf0_Recieved.Isconnected = false;
-			cf0_Recieved.mocapReceived = true;
-			cf0_Recieved.rosReceived = false;
-		}
-		else if (!cf0_Recieved.preros)
-		{
-			cf0_Recieved.Isconnected = false;
-			cf0_Recieved.mocapReceived = true;
-			cf0_Recieved.rosReceived = false;
-		}
-		cf0_Recieved.premocap = false;
-		cf0_Recieved.preros = false;
-		*/
 
 		/* signal a ros loop update  */
 		Q_EMIT rosLoopUpdate();
@@ -316,6 +258,7 @@ void QNode::pub_command(){
 }
 
 void QNode::takeoff(int id){
+	cf_goal[id].header.stamp = ros::Time::now();
 	cf_goal[id].pose.position.x = cf_mocap[id].position[0];
 	cf_goal[id].pose.position.y = cf_mocap[id].position[1];
 	cf_goal[id].pose.position.z = 0.5;
@@ -365,6 +308,7 @@ void QNode::land(int id){
 }
 
 void QNode::move_cf(int id, float target[3]){
+	cf_goal[id].header.stamp = ros::Time::now();
 	cf_goal[id].pose.position.x = target[0];
 	cf_goal[id].pose.position.y = target[1];
 	cf_goal[id].pose.position.z = target[2];
@@ -384,86 +328,3 @@ Mocap QNode::GetMocap(int id){
 }
 
 
-
-
-/*
-void QNode::mocap_callback(const cf_gs::Mocap::ConstPtr &msg)
-{
-	mocap = *msg;
-	cf0_Recieved.premocap = true;
-	//
-}
-void QNode::goalChanged(const geometry_msgs::PoseStamped::ConstPtr &msg)
-{
-	cf0_goal = *msg;
-}
-void QNode::imu_callback(const sensor_msgs::Imu::ConstPtr &msg)
-{
-	// If can get msg from imu, ros connected
-	cf0_imu = *msg;
-	cf0_Recieved.preros = true;
-}
-
-void QNode::pub_command()
-{
-	if (commandFlag[0])
-	{
-		pose_pub_cf0.publish(cf0_goal);
-		cmdv_pub_cf0.publish(cf0_cmdv);
-		commandFlag[0] = false;
-	}
-	// if (commandFlag[1])
-	// {
-	//     moveUAV1.publish(Command_List[1]);
-	//     commandFlag[1] = false;
-	// }
-	// if (commandFlag[2])
-	// {
-	//     moveUAV2.publish(Command_List[2]);
-	//     commandFlag[2] = false;
-	// }
-}
-
-void QNode::takeoff()
-{
-	cf0_goal.pose.position.x = mocap.position[0];
-	cf0_goal.pose.position.y = mocap.position[1];
-	cf0_goal.pose.position.z = 0.5;
-	// cf0_cmdv.linear.z = 43000;
-	takeoff_cf0.call(serv_empty);
-	commandFlag[0] = true;
-}
-void QNode::land()
-{
-	// cf0_goal.pose.position.x = mocap.position[0];
-	// cf0_goal.pose.position.y = mocap.position[1];
-	// cf0_goal.pose.position.z = 0;
-	land_cf0.call(serv_empty);
-	// commandFlag[0] = true;
-}
-
-void QNode::move_cf(float target[3])
-{
-	cf0_goal.pose.position.x = target[0];
-	cf0_goal.pose.position.y = target[1];
-	cf0_goal.pose.position.z = target[2];
-	commandFlag[0] = true;
-}
-
-cf_gs::signalRec QNode::Update_cf0_signal()
-{
-	return cf0_Recieved;
-}
-
-PoseStamped QNode::GetDesPos()
-{
-	return cf0_goal;
-}
-
-Mocap QNode::GetMocap() // int ID
-{
-	return mocap; //mocap[ID]
-}
-*/
-
-} // namespace cf_gs
