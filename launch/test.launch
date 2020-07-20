@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="enable_logging" default="False" />
+  <arg name="uri0" default="radio://0/80/1M/E7E7E7E700" />
+  <!-- <arg name="uri1" default="radio://0/82/1M/E7E7E7E701" />
+  <arg name="uri2" default="radio://0/84/1M/E7E7E7E702" />
+  <arg name="uri3" default="radio://0/84/1M/E7E7E7E703" />
+  <arg name="uri4" default="radio://0/88/1M/E7E7E7E704" />
+  <arg name="uri5" default="radio://0/88/1M/E7E7E7E705" /> -->
+
+  <include file="$(find crazyflie_driver)/launch/crazyflie_server.launch">
+  </include>
+
+  <group ns="cf0">
+	  <include file="$(find crazyflie_driver)/launch/crazyflie_add.launch">
+		<arg name="uri" value="$(arg uri0)" />
+		<arg name="tf_prefix" value="cf0" />
+    <arg name="enable_logging" value="$(arg enable_logging)$" />
+	  </include>
+  </group>
+
+  <include file="$(find crazyflie_controller)/launch/crazyflie2.launch">
+    <arg name="frame" value="cf0" />
+    <arg name="worldFrame" default="/world"/>
+  </include>
+
+  <!-- <node name="CFhover" pkg="test" type="CFhover.py" output="screen" /> -->
+    <!-- <arg name="frame" value="cf0" />
+    <arg name="worldFrame" default="/world"/> -->
+  <!-- </node> -->
+
+    <!-- add outer-loop controller, hover only for now -->
+  <!-- <node name="test" pkg="test" type="hover.py" output="screen">
+      <param name="worldFrame" value="$(arg world_frame)" />
+      <param name="frame" value="$(arg cf_frame)" />
+      <arg name="uri" value="$(arg uri)" /> -->
+      <!-- <param name="Ds" value="$(arg Ds)"/>
+      <param name="Is" value="$(arg Is)" />
+      <param name="player_id" value="$(arg player_id)"/>
+      <param name='velocity' value="$(arg velocity)" />
+      <param name="cap_range" value="$(arg cap_range)"/>
+      <param name="speed_ratio" value="$(arg speed_ratio)"/>
+      <param name="z" value="$(arg z)"/> -->
+  <!-- </node> -->
+  <!-- <group> -->
+
+</launch>

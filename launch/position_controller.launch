@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<launch>
+
+<arg name ="uavid" default="cf0"/>
+  <include file="$(find crazyflie_controller)/launch/crazyflie2.launch">
+    <arg name="frame" value="$(arg uavid)" />
+    <arg name="worldFrame" default="/world"/>
+  </include>
+   <!-- <include file="$(find crazyflie_controller)/launch/crazyflie2.launch">
+    <arg name="frame" value="cf4" />
+    <arg name="worldFrame" default="/world"/>
+  </include>
+
+  <include file="$(find crazyflie_controller)/launch/crazyflie2.launch">
+    <arg name="frame" value="cf3" />
+    <arg name="worldFrame" default="/world"/>
+  </include> -->
+
+ 
+
+
+</launch>

@@ -186,10 +186,15 @@ void MainWindow::updatecf0(){
 
         ui.cf0_con->setText("<font color='green'>cf0</font>");
         ui.cf0_Button_Set->setEnabled(true);
+        ui.cf0_Button_Get->setEnabled(true);
         ui.cf0_Button_Takeoff->setEnabled(true);
         ui.cf0_Button_Land->setEnabled(true);
-        ui.cf0_title->setPalette(Qt::green);
         ui.cf0_title->setStyleSheet("color: green;");
+        ui.cf0_title->setPalette(Qt::green);
+
+        ui.cf0_x_input->setReadOnly(false);
+        ui.cf0_y_input->setReadOnly(false);
+        ui.cf0_z_input->setReadOnly(false);
 
         ui.cf0_mocap->setText("<font color='green'>cf0</font>");
         ui.cf0_rosc->setText("<font color='green'>cf0</font>");
@@ -218,11 +223,13 @@ void MainWindow::updatecf0(){
         ui.cf0_y_input->setReadOnly(true);
         ui.cf0_z_input->setReadOnly(true);
     
-        if (!signal.mocapReceived){
-            ui.cf0_mocap->setText("<font color='red'>cf0</font>");
-        } 
-        if (!signal.rosReceived) {
+        if (signal.mocapReceived){
+            ui.cf0_mocap->setText("<font color='green'>cf0</font>");
             ui.cf0_rosc->setText("<font color='red'>cf0</font>");
+        } 
+        if (signal.rosReceived) {
+            ui.cf0_mocap->setText("<font color='red'>cf0</font>"); 
+            ui.cf0_rosc->setText("<font color='green'>cf0</font>");
         }
     }
 }
@@ -309,10 +316,15 @@ void MainWindow::updatecf1(){
 
         ui.cf1_con->setText("<font color='green'>cf1</font>");
         ui.cf1_Button_Set->setEnabled(true);
+        ui.cf1_Button_Get->setEnabled(true);
         ui.cf1_Button_Takeoff->setEnabled(true);
         ui.cf1_Button_Land->setEnabled(true);
-        ui.cf1_title->setPalette(Qt::green);
         ui.cf1_title->setStyleSheet("color: green;");
+        ui.cf1_title->setPalette(Qt::green);
+
+        ui.cf1_x_input->setReadOnly(false);
+        ui.cf1_y_input->setReadOnly(false);
+        ui.cf1_z_input->setReadOnly(false);
 
         ui.cf1_mocap->setText("<font color='green'>cf1</font>");
         ui.cf1_rosc->setText("<font color='green'>cf1</font>");
@@ -340,12 +352,14 @@ void MainWindow::updatecf1(){
         ui.cf1_x_input->setReadOnly(true);
         ui.cf1_y_input->setReadOnly(true);
         ui.cf1_z_input->setReadOnly(true);
-    
-        if (!signal.mocapReceived){
-            ui.cf1_mocap->setText("<font color='red'>cf1</font>");
-        } 
-        if (!signal.rosReceived) {
+
+        if (signal.mocapReceived){
+            ui.cf1_mocap->setText("<font color='green'>cf1</font>");
             ui.cf1_rosc->setText("<font color='red'>cf1</font>");
+        } 
+        if (signal.rosReceived) {
+            ui.cf1_mocap->setText("<font color='red'>cf1</font>"); 
+            ui.cf1_rosc->setText("<font color='green'>cf1</font>");
         }
     }
 }
@@ -432,10 +446,15 @@ void MainWindow::updatecf2(){
 
         ui.cf2_con->setText("<font color='green'>cf2</font>");
         ui.cf2_Button_Set->setEnabled(true);
+        ui.cf2_Button_Get->setEnabled(true);
         ui.cf2_Button_Takeoff->setEnabled(true);
         ui.cf2_Button_Land->setEnabled(true);
-        ui.cf2_title->setPalette(Qt::green);
         ui.cf2_title->setStyleSheet("color: green;");
+        ui.cf2_title->setPalette(Qt::green);
+
+        ui.cf2_x_input->setReadOnly(false);
+        ui.cf2_y_input->setReadOnly(false);
+        ui.cf2_z_input->setReadOnly(false);
 
         ui.cf2_mocap->setText("<font color='green'>cf2</font>");
         ui.cf2_rosc->setText("<font color='green'>cf2</font>");
@@ -464,11 +483,13 @@ void MainWindow::updatecf2(){
         ui.cf2_y_input->setReadOnly(true);
         ui.cf2_z_input->setReadOnly(true);
     
-        if (!signal.mocapReceived){
-            ui.cf2_mocap->setText("<font color='red'>cf2</font>");
-        } 
-        if (!signal.rosReceived) {
+        if (signal.mocapReceived){
+            ui.cf2_mocap->setText("<font color='green'>cf2</font>");
             ui.cf2_rosc->setText("<font color='red'>cf2</font>");
+        } 
+        if (signal.rosReceived) {
+            ui.cf2_mocap->setText("<font color='red'>cf2</font>"); 
+            ui.cf2_rosc->setText("<font color='green'>cf2</font>");
         }
     }
 }
@@ -556,10 +577,15 @@ void MainWindow::updatecf3(){
 
         ui.cf3_con->setText("<font color='green'>cf3</font>");
         ui.cf3_Button_Set->setEnabled(true);
+        ui.cf3_Button_Get->setEnabled(true);
         ui.cf3_Button_Takeoff->setEnabled(true);
         ui.cf3_Button_Land->setEnabled(true);
-        ui.cf3_title->setPalette(Qt::green);
         ui.cf3_title->setStyleSheet("color: green;");
+        ui.cf3_title->setPalette(Qt::green);
+
+        ui.cf3_x_input->setReadOnly(false);
+        ui.cf3_y_input->setReadOnly(false);
+        ui.cf3_z_input->setReadOnly(false);
 
         ui.cf3_mocap->setText("<font color='green'>cf3</font>");
         ui.cf3_rosc->setText("<font color='green'>cf3</font>");
@@ -588,11 +614,13 @@ void MainWindow::updatecf3(){
         ui.cf3_y_input->setReadOnly(true);
         ui.cf3_z_input->setReadOnly(true);
     
-        if (!signal.mocapReceived){
-            ui.cf3_mocap->setText("<font color='red'>cf3</font>");
-        } 
-        if (!signal.rosReceived) {
+        if (signal.mocapReceived){
+            ui.cf3_mocap->setText("<font color='green'>cf3</font>");
             ui.cf3_rosc->setText("<font color='red'>cf3</font>");
+        } 
+        if (signal.rosReceived) {
+            ui.cf3_mocap->setText("<font color='red'>cf3</font>"); 
+            ui.cf3_rosc->setText("<font color='green'>cf3</font>");
         }
     }
 }
@@ -679,10 +707,15 @@ void MainWindow::updatecf4(){
 
         ui.cf4_con->setText("<font color='green'>cf4</font>");
         ui.cf4_Button_Set->setEnabled(true);
+        ui.cf4_Button_Get->setEnabled(true);
         ui.cf4_Button_Takeoff->setEnabled(true);
         ui.cf4_Button_Land->setEnabled(true);
-        ui.cf4_title->setPalette(Qt::green);
         ui.cf4_title->setStyleSheet("color: green;");
+        ui.cf4_title->setPalette(Qt::green);
+
+        ui.cf4_x_input->setReadOnly(false);
+        ui.cf4_y_input->setReadOnly(false);
+        ui.cf4_z_input->setReadOnly(false);
 
         ui.cf4_mocap->setText("<font color='green'>cf4</font>");
         ui.cf4_rosc->setText("<font color='green'>cf4</font>");
@@ -711,11 +744,13 @@ void MainWindow::updatecf4(){
         ui.cf4_y_input->setReadOnly(true);
         ui.cf4_z_input->setReadOnly(true);
     
-        if (!signal.mocapReceived){
-            ui.cf4_mocap->setText("<font color='red'>cf4</font>");
-        } 
-        if (!signal.rosReceived) {
+        if (signal.mocapReceived){
+            ui.cf4_mocap->setText("<font color='green'>cf4</font>");
             ui.cf4_rosc->setText("<font color='red'>cf4</font>");
+        } 
+        if (signal.rosReceived) {
+            ui.cf4_mocap->setText("<font color='red'>cf4</font>"); 
+            ui.cf4_rosc->setText("<font color='green'>cf4</font>");
         }
     }
 }
@@ -802,10 +837,15 @@ void MainWindow::updatecf5(){
 
         ui.cf5_con->setText("<font color='green'>cf5</font>");
         ui.cf5_Button_Set->setEnabled(true);
+        ui.cf5_Button_Get->setEnabled(true);
         ui.cf5_Button_Takeoff->setEnabled(true);
         ui.cf5_Button_Land->setEnabled(true);
-        ui.cf5_title->setPalette(Qt::green);
         ui.cf5_title->setStyleSheet("color: green;");
+        ui.cf5_title->setPalette(Qt::green);
+
+        ui.cf5_x_input->setReadOnly(false);
+        ui.cf5_y_input->setReadOnly(false);
+        ui.cf5_z_input->setReadOnly(false);
 
         ui.cf5_mocap->setText("<font color='green'>cf5</font>");
         ui.cf5_rosc->setText("<font color='green'>cf5</font>");
@@ -834,11 +874,13 @@ void MainWindow::updatecf5(){
         ui.cf5_y_input->setReadOnly(true);
         ui.cf5_z_input->setReadOnly(true);
     
-        if (!signal.mocapReceived){
-            ui.cf5_mocap->setText("<font color='red'>cf5</font>");
-        } 
-        if (!signal.rosReceived) {
+        if (signal.mocapReceived){
+            ui.cf5_mocap->setText("<font color='green'>cf5</font>");
             ui.cf5_rosc->setText("<font color='red'>cf5</font>");
+        } 
+        if (signal.rosReceived) {
+            ui.cf5_mocap->setText("<font color='red'>cf5</font>"); 
+            ui.cf5_rosc->setText("<font color='green'>cf5</font>");
         }
     }
 }
