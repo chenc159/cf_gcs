@@ -141,6 +141,7 @@ void QNode::run()
 			cf_Recieved[i].premocap = false;
 			cf_Recieved[i].preros = false;
 		}
+		// std::cout << ros::Time::now() << std::endl;
 
 		/* signal a ros loop update  */
 		Q_EMIT rosLoopUpdate();
@@ -326,5 +327,8 @@ PoseStamped QNode::GetDesPos(int id){
 Mocap QNode::GetMocap(int id){
 	return cf_mocap[id];
 }
+
+
+} // namespace qt_ground_station
 
 
