@@ -227,9 +227,13 @@ void MainWindow::updatecf0(){
             ui.cf0_mocap->setText("<font color='green'>cf0</font>");
             ui.cf0_rosc->setText("<font color='red'>cf0</font>");
         } 
-        if (signal.rosReceived) {
+        else if (signal.rosReceived) {
             ui.cf0_mocap->setText("<font color='red'>cf0</font>"); 
             ui.cf0_rosc->setText("<font color='green'>cf0</font>");
+        }
+        else {
+            ui.cf0_mocap->setText("<font color='red'>cf0</font>"); 
+            ui.cf0_rosc->setText("<font color='red'>cf0</font>");
         }
     }
 }
@@ -357,9 +361,13 @@ void MainWindow::updatecf1(){
             ui.cf1_mocap->setText("<font color='green'>cf1</font>");
             ui.cf1_rosc->setText("<font color='red'>cf1</font>");
         } 
-        if (signal.rosReceived) {
+        else if (signal.rosReceived) {
             ui.cf1_mocap->setText("<font color='red'>cf1</font>"); 
             ui.cf1_rosc->setText("<font color='green'>cf1</font>");
+        }
+        else{
+            ui.cf1_mocap->setText("<font color='red'>cf1</font>"); 
+            ui.cf1_rosc->setText("<font color='red'>cf1</font>");
         }
     }
 }
@@ -487,9 +495,13 @@ void MainWindow::updatecf2(){
             ui.cf2_mocap->setText("<font color='green'>cf2</font>");
             ui.cf2_rosc->setText("<font color='red'>cf2</font>");
         } 
-        if (signal.rosReceived) {
+        else if (signal.rosReceived) {
             ui.cf2_mocap->setText("<font color='red'>cf2</font>"); 
             ui.cf2_rosc->setText("<font color='green'>cf2</font>");
+        }
+        else {
+            ui.cf2_mocap->setText("<font color='red'>cf2</font>"); 
+            ui.cf2_rosc->setText("<font color='red'>cf2</font>");
         }
     }
 }
@@ -618,9 +630,13 @@ void MainWindow::updatecf3(){
             ui.cf3_mocap->setText("<font color='green'>cf3</font>");
             ui.cf3_rosc->setText("<font color='red'>cf3</font>");
         } 
-        if (signal.rosReceived) {
+        else if (signal.rosReceived) {
             ui.cf3_mocap->setText("<font color='red'>cf3</font>"); 
             ui.cf3_rosc->setText("<font color='green'>cf3</font>");
+        }
+        else {
+            ui.cf3_mocap->setText("<font color='red'>cf3</font>"); 
+            ui.cf3_rosc->setText("<font color='red'>cf3</font>");
         }
     }
 }
@@ -748,9 +764,13 @@ void MainWindow::updatecf4(){
             ui.cf4_mocap->setText("<font color='green'>cf4</font>");
             ui.cf4_rosc->setText("<font color='red'>cf4</font>");
         } 
-        if (signal.rosReceived) {
+        else if (signal.rosReceived) {
             ui.cf4_mocap->setText("<font color='red'>cf4</font>"); 
             ui.cf4_rosc->setText("<font color='green'>cf4</font>");
+        }
+        else {
+            ui.cf4_mocap->setText("<font color='red'>cf4</font>"); 
+            ui.cf4_rosc->setText("<font color='red'>cf4</font>");
         }
     }
 }
@@ -878,9 +898,13 @@ void MainWindow::updatecf5(){
             ui.cf5_mocap->setText("<font color='green'>cf5</font>");
             ui.cf5_rosc->setText("<font color='red'>cf5</font>");
         } 
-        if (signal.rosReceived) {
+        else if (signal.rosReceived) {
             ui.cf5_mocap->setText("<font color='red'>cf5</font>"); 
             ui.cf5_rosc->setText("<font color='green'>cf5</font>");
+        }
+        else {
+            ui.cf5_mocap->setText("<font color='red'>cf5</font>"); 
+            ui.cf5_rosc->setText("<font color='red'>cf5</font>");
         }
     }
 }
